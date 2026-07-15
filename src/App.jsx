@@ -1,35 +1,43 @@
 import './App.css'
-// import Sample from './classes/02. Hooks-Props/Sample'
-// import Counter from './classes/02. Hooks-Props/Counter'
+import { Routes, Route } from 'react-router-dom';
 
-// import { CounterBy1, CounterBy3, CounterBy5 } from './classes/02. Hooks-Props/newCounter'
+// import Navbar from './classes/03. React-Routing/Navbar'
+// import Home from './classes/03. React-Routing/pages/Home'
+// import About from './classes/03. React-Routing/pages/About'
+// import Services from './classes/03. React-Routing/pages/Services'
+// import Gallery from './classes/03. React-Routing/pages/Gallery'
 
-// import Counter from './classes/02. Hooks-Props/propCounter';
-// import Counter from './classes/02. Hooks-Props/multipleProps';
+// import GoToCart from './classes/03. React-Routing/CartExample/GoToCart';
+// import Cart from './classes/03. React-Routing/CartExample/Cart';
 
-// import ToggleCounter from './classes/02. Hooks-Props/ConditionalRendering'
+// import Login from './classes/03. React-Routing/FormSubmission/Login';
+// import Dashboard from './classes/03. React-Routing/FormSubmission/Dashboard';
+
+import Login from './classes/03. React-Routing/ProtectedRoute/pages/Login';
+import Dashboard from './classes/03. React-Routing/ProtectedRoute/pages/Dashboard';
+import ProtectedRoute from './classes/03. React-Routing/ProtectedRoute/ProtectedRoute';
+
 
 function App() {
 
   return (
     <>
-      {/* <Sample /> */}
-      {/* <Counter /> */}
+      {/* <Navbar /> */}
 
-      {/* <CounterBy1 />  
-      <CounterBy3 />
-      <CounterBy5 /> */}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        
+        <Route 
+          path="/dashboard" 
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } 
 
-      {/* <h1>Counter by 1</h1>
-      <Counter diff={1} name="Yathe" />
-
-      <h1>Counter by 3</h1>
-      <Counter diff={3} />
-
-      <h1>Counter by 10</h1>
-      <Counter diff={10} /> */}
-
-      {/* <ToggleCounter /> */}
+        />
+      
+      </Routes>
 
     </>
   )
